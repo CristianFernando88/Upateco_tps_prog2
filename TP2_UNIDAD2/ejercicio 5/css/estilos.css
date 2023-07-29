@@ -1,0 +1,23 @@
+.product-card{
+    margin: auto;
+    border-radius: 15px;
+    border: 5px solid rgb(94, 7, 207);
+    width: 30%;
+    text-align: center;
+    /*padding: 15px;*/
+}
+.product-card img{
+    width: 200px;
+}
+
+.product-info{
+    background-color: rgb(161, 161, 250);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-info p{
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+}

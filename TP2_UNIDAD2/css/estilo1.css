@@ -1,0 +1,24 @@
+/*Estilos ejercicio 1*/
+.boton{
+    font-size: 15px;
+}
+
+.boton:hover{
+    box-shadow: 10px 5px 5px gray;
+    background-color: #FDD98B;
+    border-radius: 10px;
+}
+
+/*estilos ejercicio 2*/
+
+.box{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(214, 186, 240);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 5px 5px 3px rgb(132, 121, 143);
+    font-size: 20px;
+}
