@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--Ejercicio 5
+Usando el documento HTML que se encuentra en la plataforma, diseñar una tarjeta de
+producto con efecto de animación al pasar el cursor.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-card{
+    width: 300px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(57, 66, 191, 0.2);
+    transition: transform 0.4s ease; 
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+ 
+  .product-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  
+  .product-card:hover {
+    transform: scale(1.10); 
+    box-shadow: 0 4px 8px rgba(27, 57, 224, 0.3);
+  }
+  
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <img src="images.jpeg" alt="Producto">
+        <div class="product-info">
+            <h3>Nombre del Producto</h3>
+            <p>Precio: $99.99</p>
+        </div>
+    </div>
+
+</body>
+</html>

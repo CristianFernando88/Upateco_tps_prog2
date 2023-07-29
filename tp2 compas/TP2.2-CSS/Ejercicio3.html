@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--Ejercicio 3
+Crear una animación de rotación en un elemento.-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Animación de rotación en un elemento</title>
+  <style>
+    
+    
+    .elemento-animado {
+      width: 100px;
+      height: 100px;
+      background-color: #326c93;
+      transform-origin: center center; 
+      animation: rotacion 4s linear infinite; 
+    }
+
+    @keyframes rotacion {
+      0% {
+        transform: rotate(0deg); 
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg); 
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="elemento-animado"></div>
+</body>
+</html>

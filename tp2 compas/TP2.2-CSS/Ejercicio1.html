@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <!--Ejercicio 1
+Crea un botón con un fondo de color, bordes redondeados y efecto de sombra cuando el
+usuario pase el cursor sobre él.-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Botón con un efecto de sombra</title>
+  <style>
+  
+    .mi-boton {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db; 
+      color: #ffffff; 
+      border: none;
+      border-radius: 10px; 
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+    }
+
+    
+    .mi-boton:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    }
+  </style>
+</head>
+<body>
+  
+  <button class="mi-boton">Mi Botón</button>
+</body>
+</html>
