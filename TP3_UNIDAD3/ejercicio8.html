@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    
+</head>
+<body>
+    <h1>Ejercicio 8</h1>
+    <p>Crear un objeto persona que contenga nombre, apellido, edad, sexo y teléfono. Luego crear una tabla (con JavaScript) e insertar los datos con su respectivo encabezado.</p>
+    <div id="contenedor_tabla">
+
+    </div>
+    <script>
+        const contenedor_t = document.getElementById("contenedor_tabla");
+        const persona={
+            nombre: 'Juan',
+            apellido: 'Perez',
+            edad: 32,
+            sexo: "M",
+            telefono: "3874562325"
+        }
+        const campos_cabecera = ["Nombre","Apellido","Edad","Sexo","Teléfono"];
+        const mi_tabla = document.createElement("table");
+        mi_tabla.border = "1";
+        const tabla_cabecera = document.createElement("thead")
+        for(let i=0;i<campos_cabecera.length;i++){
+            let campo_c = document.createElement("th");
+            campo_c.textContent = campos_cabecera[i];
+            tabla_cabecera.appendChild(campo_c);
+        }
+        mi_tabla.appendChild(tabla_cabecera);
+        contenedor_t.appendChild(mi_tabla);
+
+        const table_body = document.createElement("tbody");
+        const fila = document.createElement("tr");
+
+        const campo_nombre = document.createElement("td");
+        campo_nombre.textContent = persona.nombre;
+        fila.appendChild(campo_nombre);
+
+        const campo_apellido = document.createElement("td");
+        campo_apellido.textContent = persona.apellido;
+        fila.appendChild(campo_apellido);
+
+        const campo_edad = document.createElement("td");
+        campo_edad.textContent = persona.edad;
+        fila.appendChild(campo_edad);
+
+        const campo_sexo = document.createElement("td");
+        campo_sexo.textContent = persona.sexo;
+        fila.appendChild(campo_sexo);
+
+        const campo_telefono = document.createElement("td");
+        campo_telefono.textContent = persona.telefono;
+        fila.appendChild(campo_telefono);
+
+        table_body.appendChild(fila);
+
+        mi_tabla.appendChild(table_body);
+    </script>
+</body>
+</html>

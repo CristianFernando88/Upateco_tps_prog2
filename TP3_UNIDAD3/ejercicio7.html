@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+    <p>Crear una función que oculte/muestre un div.</p>
+    <button id="btn">Ocultar/mostrar</button>
+    <div id="elemento_div">
+        Div a ocultar
+    </div>
+    <script>
+        const elemento_div = document.getElementById("elemento_div");
+        const boton = document.getElementById("btn");
+        boton.addEventListener('click',oculta_mostrar_div);
+        function oculta_mostrar_div(){ 
+            if(elemento_div.style.getPropertyValue("display") == "none"){
+                elemento_div.style.display = "block";
+            }else{
+                elemento_div.style.display = "none";
+            };
+        };
+    </script>
+</body>
+</html>
