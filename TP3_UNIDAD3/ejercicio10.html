@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Ejercicio 10</h1>
+    <p>Dada la siguiente tabla en HTML se solicita, haciendo uso de la api proporcionada, completar con los datos necesarios. Hay que crear la estructura HTML desde el JavaScript.</p>
+    <table id="tabla" border="1"> 
+        <tr> 
+            <th>Nombre</th> 
+            <th>Apellido</th> 
+            <th>Email</th> 
+            <th>Nombre De la Empresa</th> 
+            <th>Direccion</th> 
+        </tr> 
+    </table>
+    <script>
+        const tabla = document.getElementById("tabla");
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response =>{
+            if(response.ok){
+                return response.json();
+            }else{
+                throw new Error('Error en la colicitud');
+            }
+        })
+        .then(data =>{
+            data.forEach(persona => {
+                let registro = document.createElement("tr");
+
+                let nombre_completo = persona.name.split(" ");
+                
+                let nombre = "";
+                let apellido = nombre_completo.pop();
+                
+                for(let i=0;i<nombre_completo.length;i++)
+                    nombre +=nombre_completo[i]+" ";
+                    
+                let campo_nombre = document.createElement("td");
+                campo_nombre.textContent = nombre;
+                registro.appendChild(campo_nombre);
+
+                let campo_apellido = document.createElement("td");
+                campo_apellido.textContent = apellido;
+                registro.appendChild(campo_apellido);
+
+                let campo_mail = document.createElement("td");
+                campo_mail.textContent = persona.email;
+                registro.appendChild(campo_mail);
+
+                let campo_empresa = document.createElement("td");
+                campo_empresa.textContent = persona.company.name;
+                registro.appendChild(campo_empresa);
+
+                let campo_domicilio = document.createElement("td");
+                campo_domicilio.textContent = persona.address.city+", "+persona.address.street+" "+persona.address.suite;
+                registro.appendChild(campo_domicilio);
+
+                tabla.appendChild(registro);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    </script>
+</body>
+</html>

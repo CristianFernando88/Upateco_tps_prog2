@@ -1,0 +1,17 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.chat-box{
+    position: absolute;
+    width: 30%;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.message-box{
+    height: 80%;
+}

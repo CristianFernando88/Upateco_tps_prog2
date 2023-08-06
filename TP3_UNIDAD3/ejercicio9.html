@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h1>Ejercicio 9</h1>
+    <p>Crear un documento HTML con un formulario que contenga los campos Nombre y Email, se pide recuperar los valores ingresados y mostrarlos por consola.</p>
+    <form action="" id="mi_formulario">
+        <label for="input_nombre">Nombre: </label>
+        <input type="text" id="input_nombre" name="input_nombre">
+        <label for="input_mail">Mail: </label>
+        <input type="email" id="input_mail" name="input_mail">
+        <!-- <input type="button" id="btn_enviar" value="enviar"> -->  
+    </form>
+    <button id="btn_enviar">ENVIAR</button>
+    <script>
+        const boton_enviar = document.getElementById("btn_enviar");
+        const formulario = document.getElementById("mi_formulario");
+        
+        boton_enviar.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let datosFormulario = new FormData(formulario);
+            let nombre = datosFormulario.get("input_nombre");
+            let mail = datosFormulario.get("input_mail");
+            console.log(nombre);
+            console.log(mail);
+        });
+    </script>
+</body>
+</html>
