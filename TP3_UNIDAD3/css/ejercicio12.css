@@ -11,7 +11,9 @@
     border: 2px solid black;
     border-radius: 20px;
     padding: 20px;
-    
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
 }
 
 .message-box{
@@ -24,19 +26,21 @@
     width: 70%;
     padding: 10px;
     overflow:auto;
-    
+    background-color: azure;
+    border-radius: 10px;
 }
 
 .chat-box button{
     width: 18%;
     padding: 10px;
     font-size: 0.8em;
+    border-radius: 10px;
 }
 
 .chat-enviado{
     border:1px solid #6f8b7c;
     border-radius: 15px;
-    padding: 5px;
-    background-color: aquamarine;
+    padding: 8px;
+    background-color: azure;
     overflow-wrap: break-word;
 }

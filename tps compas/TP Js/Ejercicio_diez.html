@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <!-- Ejercicio 10: Dada la siguiente tabla en HTML se solicita, haciendo uso de la api proporcionada
+      API = https://jsonplaceholder.typicode.com/users, 
+      completar con los datos necesarios. Hay que crear la estructura HTML desde el JavaScript.
+-->
+<head>
+  <title>Tabla de Usuarios</title>
+</head>
+<body>
+  <h1>Tabla de Usuarios</h1>
+  <table id="tabla">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Nombre de la Empresa</th>
+      <th>Direccion</th>
+    </tr>
+  </table>
+
+  <script>
+    const tabla = document.getElementById("tabla");
+
+    
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(usuario => {
+          const fila = document.createElement("tr");
+
+          const nombre = document.createElement("td");
+          nombre.textContent = usuario.name;
+          fila.appendChild(nombre);
+
+          const apellido = document.createElement("td");
+          apellido.textContent = usuario.username;
+          fila.appendChild(apellido);
+
+          const email = document.createElement("td");
+          email.textContent = usuario.email;
+          fila.appendChild(email);
+
+          const nombreEmpresa = document.createElement("td");
+          nombreEmpresa.textContent = usuario.company.name;
+          fila.appendChild(nombreEmpresa);
+
+          const direccion = document.createElement("td");
+          direccion.textContent = usuario.address.street + ", " + usuario.address.suite + ", " + usuario.address.city;
+          fila.appendChild(direccion);
+
+          tabla.appendChild(fila);
+        });
+      })
+      .catch(error => console.error("Error al obtener los datos de la API:", error));
+  </script>
+</body>
+</html>

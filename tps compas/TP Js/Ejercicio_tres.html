@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<!--Ejercicio 3:Crear un vector de números con al menos 10 elementos, filtrar todos los números pares e 
+insertarlo dentro de un elemento HTML.-->
+
+<head>
+  <title>Números Pares</title>
+</head>
+<body>
+  <div id="numerosPares"></div>
+
+  <script>
+    const numeros = [2, 5, 18, 12, 16, 23, 4, 8, 10, 29];
+
+    const numerosPares = numeros.filter(num => num % 2 === 0);
+    const divElement = document.getElementById("numerosPares");
+    divElement.innerText = "Números Pares: " + numerosPares.join(", ");
+  </script>
+</body>
+</html>
+

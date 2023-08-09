@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  
+  <!-- Ejercicio 6: Crea un botón y agregarle un evento para que cambie de color.
+-->
+
+<head>
+  <title>Botón Cambiador de Color</title>
+  <style>
+    #colorButton {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+  <button id="colorButton">Clic aquí para cambiar el color</button>
+
+  <script>
+    
+    const colorButton = document.getElementById("colorButton");
+
+    colorButton.addEventListener("click", () => {
+      
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+      colorButton.style.backgroundColor = randomColor;
+    });
+  </script>
+</body>
+</html>

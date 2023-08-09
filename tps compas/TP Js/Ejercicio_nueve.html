@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Ejercicio 9: Crear un documento HTML con un formulario que contenga los campos Nombre y Email, se 
+pide recuperar los valores ingresados y mostrarlos por consola.-->
+
+<head>
+  <title>Formulario</title>
+</head>
+<body>
+  <h1>Formulario</h1>
+  <form id="miFormulario">
+    <label for="nombre">NOMBRE:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="email">EMAIL:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="button" id="submitButton">Enviar</button>
+  </form>
+
+  <script>
+    const submitButton = document.getElementById("submitButton");
+
+    submitButton.addEventListener("click", () => {
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+
+      console.log("Nombre:", nombre);
+      console.log("Email:", email);
+    });
+  </script>
+</body>
+</html>

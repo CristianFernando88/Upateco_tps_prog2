@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Botón Cambia Color</title>
+</head>
+<body>
+  <button id="colorButton">Haz clic para cambiar de color</button>
+
+  <script>
+    const button = document.getElementById("colorButton");
+
+    button.addEventListener("click", () => {
+      const randomColor = getRandomColor();
+      button.style.backgroundColor = randomColor;
+    });
+
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>

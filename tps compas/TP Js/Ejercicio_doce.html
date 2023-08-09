@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<!-- Ejercicio 12: Crear un “chatBox” donde tome los datos de un input y los muestre, (Se debe usar HTML, 
+CSS y JavaScript).
+
+-->
+<head>
+  <title>ChatBox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #chatContainer {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #3189e8;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #mensajeInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #3189e8;
+    }
+    #mensajes {
+      list-style: none;
+      padding: 0;
+    }
+    .mensaje {
+      background-color: #3189e8;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatContainer">
+    <h1>chatBox</h1>
+    <ul id="mensajes">
+    
+    </ul>
+    <input type="text" id="mensajeInput" placeholder="Escribe tu mensaje">
+    <button id="enviarButton">Enviar</button>
+  </div>
+
+  <script>
+    const mensajeInput = document.getElementById("mensajeInput");
+    const enviarButton = document.getElementById("enviarButton");
+    const mensajes = document.getElementById("mensajes");
+
+    enviarButton.addEventListener("click", () => {
+      const mensajeTexto = mensajeInput.value;
+
+      if (mensajeTexto.trim() !== "") {
+        const nuevoMensaje = document.createElement("li");
+        nuevoMensaje.classList.add("mensaje");
+        nuevoMensaje.textContent = mensajeTexto;
+        mensajes.appendChild(nuevoMensaje);
+
+        mensajeInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>

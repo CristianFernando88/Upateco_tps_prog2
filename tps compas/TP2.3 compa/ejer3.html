@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Números Pares</title>
+</head>
+<body>
+  <div id="numerosPares"></div>
+
+  <script>
+    const numeros = [2, 5, 8, 11, 16, 23, 4, 7, 10, 9];
+
+    const numerosPares = numeros.filter(num => num % 2 === 0);
+    const divElement = document.getElementById("numerosPares");
+    divElement.innerText = "Números Pares: " + numerosPares.join(", ");
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Arial, sans-serif;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+.chatbot{    
+    height: 80vh;
+    width: 40vw;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+    grid-template-columns: 1fr;
+    background-color: black;
+    color:white
+}
+.chatbot-encabezado{
+    grid-row: 1/2;  
+    border-bottom: 2px solid white;
+    font-size: 3vw;
+    text-align: center;
+}
+.chatbot-mensajes{
+    grid-row: 2/3;
+    overflow: auto;  
+    padding: 10px;
+}
+.chatbot-caja-texto-boton{
+     grid-row: 3/4; 
+     display: flex;
+     flex-wrap: nowrap;        
+}
+#caja-texto{    
+    width: 80%;
+    background-color: rgba(52, 44, 44, 0.588);
+    color: white;
+}
+#boton{
+    width: 20%;
+    background-color: azure;
+    color: rgb(58, 46, 46);
+    border-radius: 10px;
+}
+.mensajes{
+    width: auto;
+    background-color: rgba(50, 73, 221, 0.793);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}

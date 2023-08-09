@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+     <!-- Ejercicio 11: Crea un calendario simple que muestre los eventos programados para un día específico. 
+Puedes usar objetos para representar los eventos y mostrarlos en una lista. -->
+<head>
+  <title>Calendario de Eventos</title>
+  <style>
+    #calendario {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="calendario">
+    <h1>Calendario de Eventos</h1>
+    <h2 id="tituloFecha"></h2>
+    <ul id="eventosLista">
+     
+    </ul>
+  </div>
+
+  <script>
+    const eventos = [
+      { fecha: "2023-08-10", nombre: "Reunión de equipo" },
+      { fecha: "2023-08-07", nombre: "Entrenamiento" },
+      { fecha: "2023-08-08", nombre: "Presentación de proyecto" },
+      { fecha: "2023-09-08", nombre: "Cumple de Juan" },
+      { fecha: "2023-09-08", nombre: "Comprar regalo" },
+    ];
+
+    const calendario = document.getElementById("calendario");
+    const tituloFecha = document.getElementById("tituloFecha");
+    const eventosLista = document.getElementById("eventosLista");
+
+    function mostrarEventosParaFecha(fecha) {
+      const eventosFiltrados = eventos.filter(evento => evento.fecha === fecha);
+
+      tituloFecha.textContent = "Eventos para " + fecha;
+      eventosLista.innerHTML = ""; // Limpiar la lista de eventos previos
+
+      if (eventosFiltrados.length > 0) {
+        eventosFiltrados.forEach(evento => {
+          const item = document.createElement("li");
+          item.textContent = evento.nombre;
+          eventosLista.appendChild(item);
+        });
+      } else {
+        const sinEventos = document.createElement("li");
+        sinEventos.textContent = "No hay eventos programados para esta fecha.";
+        eventosLista.appendChild(sinEventos);
+      }
+    }    
+
+    mostrarEventosParaFecha("2023-09-08");
+  </script>
+</body>
+</html>
+
