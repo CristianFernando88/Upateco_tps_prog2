@@ -1,14 +1,22 @@
 from datetime import datetime
 import json
 def operacion_aritmetica(operation,num1,num2):
+    '''Realiza una operaciones aritmética
+       recibe como parametro operation=operador
+       num1=valor numero1 y num2= valor numero 2
+       retorna el resultado en formato json
+    '''
     if operation == 'sum':
-        return {'resultado':f'{num1+num2}'}
+        return {'resultado':f'{num1+num2}'},200
     elif operation == 'sub':
-        return {'resultado':f'{num1-num2}'}
+        return {'resultado':f'{num1-num2}'},200
     elif operation == 'mult':
-        return {'resultado':f'{num1*num2}'}
+        return {'resultado':f'{num1*num2}'},200   
     elif operation == 'div':
-        return {'resultado':f'{num1/num2}'}
+        if num2>0:
+            return {'resultado':f'{num1/num2}'}
+        else:
+            return {'error': 'No se puede dividir por cero'}
     else:
         return {'error': 'Ha ocurrido un error operacion no válida'}, 400
 
@@ -26,6 +34,7 @@ def validar_dni(str_dni):
         return -1
 
 def calcular_edad(dob):
+    '''retorna una edad de acuerdo a una fecha en formato iso aaaa-mm-dd'''
     fecha_str = dob.replace("-","/")
     fecha_nto = datetime.strptime(fecha_str, '%Y/%m/%d')
     fecha_actual = datetime.now()
@@ -41,6 +50,8 @@ def calcular_edad(dob):
         return years - 1
     
 def encriptarMorse(keywords):
+    '''retorna clave morse en base a una cadena pasada por
+    el parametro keywords'''
     with open("morse_code.json") as archivo:
         morse = json.load(archivo)
     letras = morse['letters']
@@ -54,6 +65,7 @@ def encriptarMorse(keywords):
     return keywords_morse[:-1]
     
 def desencriptarMorse(keyword):
+    '''desencripta una clave morse y retorna una cadena'''
     with open("morse_code.json") as archivo:
         morse = json.load(archivo)
     letras_json = morse['letters']
@@ -70,6 +82,7 @@ def desencriptarMorse(keyword):
     return keyword_decodifcada.capitalize()
 
 def convertirBinario(binario):
+    '''hace la converion de un binario a decimal'''
     num = 0
     exponente = 0
     while binario > 0:
@@ -80,29 +93,31 @@ def convertirBinario(binario):
     return num
 
 def simbolos_balanceados(caracteres):
-  stack = []
-  caracteres_apertura = "([{"
-  caracteres_cierre = ")]}"
-  caracteres_balanceados = ["[]","()","{}"]
-  for caracter in caracteres:
-    if caracter in caracteres_apertura:
-      stack.append(caracter)
-    elif caracter in caracteres_cierre:
-      if len(stack)>=1:
-        caracter_apertura = stack[-1]
-        par_caracter = caracter_apertura + caracter
-        if par_caracter in caracteres_balanceados:
-            stack.pop()  
-        else:
-          return False
-      else:
-        return False
-  return True
+    '''determina si una cadena de simbolos estan balanceados
+    retorna true o false'''
+    stack = []
+    caracteres_apertura = "([{"
+    caracteres_cierre = ")]}"
+    caracteres_balanceados = ["[]","()","{}"]
+    for caracter in caracteres:
+        if caracter in caracteres_apertura:
+            stack.append(caracter)
+        elif caracter in caracteres_cierre:
+            if len(stack)>=1:
+                caracter_apertura = stack[-1]
+                par_caracter = caracter_apertura + caracter
+                if par_caracter in caracteres_balanceados:
+                    stack.pop()  
+                else:
+                    return False
+            else:
+                return False
+    return True
 
 
 if __name__ =="__main__":
     """ print(operacion_aritmetica('sum',2,3))
     print(validar_dni('00-456.789'))
     print(calcular_edad("1988-10-20")) """
-    print(encriptarMorse("Buenas+tardes"))
-    print(desencriptarMorse("-...+..-+.+-.+.-+...+^+-+.-+.-.+-..+.+..."))
+    #print(encriptarMorse("Buenas+tardes"))
+    #print(desencriptarMorse("-...+..-+.+-.+.-+...+^+-+.-+.-.+-..+.+..."))
