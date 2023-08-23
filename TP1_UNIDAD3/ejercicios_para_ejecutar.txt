@@ -1,0 +1,41 @@
+Ejercicio 1
+url: http://127.0.0.1:5000
+
+Ejercicio 2
+url: http://127.0.0.1:5000/info
+
+Ejercicio 3
+url: http://127.0.0.1:5000/about
+
+Ejercicio 4
+url: http://127.0.0.1:5000/sum/20/10
+
+Ejercicio 5
+url: http://127.0.0.1:5000/age/2001-10-20
+
+Ejercicio 6
+url: http://127.0.0.1:5000/operate/div/5/0
+
+Ejercicio 7
+url: http://127.0.0.1:5000/operate?operation=sum&num1=20&num2=10
+
+Ejercicio 8
+url: http://127.0.0.1:5000/title/SARmienTo
+
+Ejercicio 9
+url: http://127.0.0.1:5000/formatted/23.456.007
+
+Ejercicio 10
+url: http://127.0.0.1:5000/format?firstname=LUiS&lastname=JUARez&dob=2001-08-27&dni=44.010.777
+
+Ejercicio 11
+url: http://127.0.0.1:5000/encode/Buenas+tardes
+
+Ejercicio 12
+url: "http://127.0.0.1:5000/decode/-...+..-+.+-.+.-+...+^+-+.-+.-.+-..+.+...+"
+
+Ejercicio 13
+url: http://127.0.0.1:5000/convert/binary/1010
+
+Ejercicio 14
+url: http://127.0.0.1:5000/balance/({[]})
